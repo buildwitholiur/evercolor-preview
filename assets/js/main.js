@@ -3,18 +3,9 @@
 
     $(document).ready(function () {
 
-        // Change main image script
-        window.changeImage = function (element) {
-            // Change the main image
-            $('#mainImage').attr('src', element.src);
 
-            // Remove 'active' class from all thumbnails
-            $('.gallery-small-images .thumb-img').removeClass('active');
 
-            // Add 'active' class to the clicked thumbnail
-            $(element).addClass('active');
-        }
-
+        $('select').niceSelect();
 
         // Product customization active class toggle
         $('.product-customization-item').on('click', function () {
@@ -48,11 +39,28 @@
                 } else {
                     clearInterval(interval);
                 }
-            }, 20);
+            }, 10);
         });
 
+        // Add cart message
 
+        const cartMessage = document.querySelector(".add-cart-message");
 
+        window.addEventListener("scroll", () => {
+            const scrolled = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const fullHeight = document.documentElement.scrollHeight;
+
+            if (scrolled > windowHeight) {
+                cartMessage.classList.add("show");
+            } else {
+                cartMessage.classList.remove("show");
+            }
+
+            if (window.innerHeight + scrolled >= fullHeight) {
+                cartMessage.classList.remove("show");
+            }
+        });
 
         // Video card play/pause
         $('.video-card').on('click', function () {
@@ -89,12 +97,80 @@
 
 
 
+        // Set countdown target date/time
+        const targetDate = new Date();
+        targetDate.setHours(targetDate.getHours() + 1);
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById("hours").innerText = "00";
+                document.getElementById("minutes").innerText = "00";
+                document.getElementById("seconds").innerText = "00";
+                clearInterval(timer);
+                return;
+            }
+
+            const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((distance / (1000 * 60)) % 60);
+            const seconds = Math.floor((distance / 1000) % 60);
+
+            document.getElementById("hours").innerText = String(hours).padStart(
+                2,
+                "0"
+            );
+            document.getElementById("minutes").innerText = String(minutes).padStart(
+                2,
+                "0"
+            );
+            document.getElementById("seconds").innerText = String(seconds).padStart(
+                2,
+                "0"
+            );
+        }
+
+        // update every second
+        updateCountdown();
+        const timer = setInterval(updateCountdown, 1000);
+
+
         // Offcanvas menu toggle
         $('.open__menu').on('click', function () {
             $('.mobile__menu, .overlay').addClass('active');
         });
         $('.close__menu, .overlay').on('click', function () {
             $('.mobile__menu, .overlay').removeClass('active');
+        });
+
+
+        // Product customization item
+        const items = document.querySelectorAll(".product-customization-item");
+        const text = document.getElementById("customization-text");
+
+        items.forEach(item => {
+            const input = item.querySelector("input");
+
+            input.addEventListener("change", () => {
+                items.forEach(i => i.classList.remove("active"));
+                item.classList.add("active");
+                text.innerHTML = `Format <span>|</span> ${input.value}`;
+            });
+        });
+
+        // Story length option
+        const storyOptions = document.querySelectorAll(".story-length-option");
+        const storyText = document.getElementById("story-length-text");
+
+        storyOptions.forEach(option => {
+            const input = option.querySelector("input");
+
+            input.addEventListener("change", () => {
+                storyOptions.forEach(o => o.classList.remove("active"));
+                option.classList.add("active");
+                storyText.innerHTML = `Story Length <span>|</span> ${input.value}`;
+            });
         });
 
 
@@ -118,17 +194,36 @@
             breakpoints: {
                 0: {
                     slidesPerView: 1,
-                    slidesOffsetBefore: 70,
                 },
                 576: {
                     slidesPerView: 2,
-                    slidesOffsetBefore: 50,
                 },
                 768: {
                     slidesPerView: 3,
                     slidesOffsetBefore: 0,
                 },
+                1199: {
+                    slidesPerView: 2,
+                    slidesOffsetBefore: 0,
+                },
+                1449: {
+                    slidesPerView: 3,
+                    slidesOffsetBefore: 0,
+                },
             },
+        });
+
+        const gallerysSwiper = new Swiper(".gallery-small-images", {
+            slidesPerView: 4,
+            spaceBetween: 8,
+            // disable dots and navigation
+            pagination: false,
+            navigation: false,
+            breakpoints: {
+                1200: {
+                    enabled: false, // disable swiper above 1200px
+                }
+            }
         });
 
 
@@ -166,6 +261,38 @@
             },
         });
 
+        // Thumbnail slider (with navigation)
+        var galleryThumbs = new Swiper(".gallery-thumbs", {
+            spaceBetween: 10,
+            slidesPerView: 6,
+            freeMode: true, loop: true,
+            watchSlidesProgress: true,
+            navigation: {
+                nextEl: ".gallery-button-next",
+                prevEl: ".gallery-button-prev",
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 4,
+                },
+                576: {
+                    slidesPerView: 5,
+                },
+                768: {
+                    slidesPerView: 6,
+                },
+            },
+        });
+
+        // Main slider (no navigation here)
+        var galleryTop = new Swiper(".gallery-top", {
+            spaceBetween: 10,
+            thumbs: {
+                swiper: galleryThumbs,
+            },
+        });
+
+
         // customers slider
         const customersSwiper = new Swiper(".customers-card-wrapper", {
             slidesPerView: 4,
@@ -190,9 +317,12 @@
                     slidesPerView: 2
                 },
                 768: {
+                    slidesPerView: 2
+                },
+                1199: {
                     slidesPerView: 3
                 },
-                992: {
+                1449: {
                     slidesPerView: 4
                 },
             },
@@ -200,6 +330,9 @@
 
 
 
+        new VenoBox({
+            selector: '.venobox'
+        });
 
         // Announcement marquee swiper
         const marqueeSwiper = new Swiper(".announcementSwiper", {
@@ -216,7 +349,7 @@
             },
         });
 
-        
+
         // Product announcement marquee swiper
         const productAnnouncementSwiper = new Swiper(".product-announcement", {
             slidesPerView: "auto",
@@ -239,6 +372,8 @@
             $(this).text(index + 1);
         });
 
+
+
         // AOS init
         AOS.init({
             disable: false,
@@ -258,6 +393,8 @@
             anchorPlacement: 'top-bottom',
         });
 
+
+
         // Magnific Popup
         $('.play__button').magnificPopup({
             type: 'iframe'
@@ -269,9 +406,6 @@
             time: 3000
         });
 
-        // Venobox
-        $('.venobox').venobox();
-
         // Nice Select
         $('select').niceSelect();
 
@@ -279,6 +413,7 @@
         $(".boxs").on('click', function () {
             $(this).toggleClass('active').siblings().removeClass('active');
         });
+
 
     }); // end of document ready
 
