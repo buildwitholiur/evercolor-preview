@@ -19,6 +19,8 @@
             $(".file-name").text(fileName);
         }
 
+
+
         // Progress circle animation
         const radius = 35;
         const circumference = 2 * Math.PI * radius;
@@ -265,7 +267,8 @@
         var galleryThumbs = new Swiper(".gallery-thumbs", {
             spaceBetween: 10,
             slidesPerView: 6,
-            freeMode: true, loop: true,
+            freeMode: true,
+            loop: true,
             watchSlidesProgress: true,
             navigation: {
                 nextEl: ".gallery-button-next",

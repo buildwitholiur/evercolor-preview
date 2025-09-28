@@ -1,10 +1,8 @@
 /* XL Device :1200px. */
 
-@media screen and (max-width: 1620px) {
-}
+@media screen and (max-width: 1620px) {}
 
-@media screen and (max-width: 1449px) {
-}
+@media screen and (max-width: 1449px) {}
 
 /* LG Device :992px. */
 
@@ -12,23 +10,29 @@
   .main-menu nav ul li a {
     font-size: 16px;
   }
+
   .header-logo a {
     width: 60px;
     height: 60px;
   }
+
   .sale-text {
     font-size: 16px;
   }
+
   .announcement-text p {
     font-size: 16px;
     padding-block: 10px;
   }
+
   .image-gallery {
     max-width: 480px;
   }
+
   .hero-inner-block {
     gap: 25px;
   }
+
   .hero-right-block {
     border-radius: 8px;
     padding: 20px;
@@ -36,117 +40,151 @@
     flex: unset;
     margin-left: 0;
   }
+
   .gallery-thumbs .swiper-slide {
     width: 66px !important;
   }
+
   .principle-table {
     margin: 0 auto;
     margin-top: 30px;
   }
+
   .newsletter-right {
     margin: 0 auto;
   }
+
   .testimonial-title,
   .product-title,
   .gallery-title {
     text-align: center;
   }
+
   .section-title h2 {
     font-size: 28px;
     line-height: 36px;
   }
+
   .personalized-area .personalized-inner-block:first-child {
     margin-bottom: 50px;
   }
+
   .personalized__content h3 {
     font-size: 30px;
   }
+
   .product-announcement {
     gap: 45px;
     margin-bottom: 40px;
   }
+
   .customers-top-block .section-title h2 {
     font-size: 40px;
   }
+
   .works-title h3 {
     font-size: 36px;
     line-height: 39px;
   }
+
   .works-title {
     margin-bottom: 30px;
   }
+
   .testimonial-area {
     padding-block: 50px;
   }
+
   .testimonial-title h2 {
     font-size: 36px;
   }
+
   .testimoial-item {
     padding-block: 20px;
   }
+
   .priciple-title h2 {
     font-size: 36px;
     line-height: 40px;
   }
+
   .gallery-title h2 {
     font-size: 36px;
   }
+
   .about-title {
     margin-bottom: 15px;
   }
+
   .about-rating-block h4 {
     font-size: 34px;
   }
+
   .about-rating-block {
     margin-bottom: 30px;
   }
+
   .about-card {
     padding: 20px;
   }
+
   .announcement-text {
     padding-block: 8px;
   }
+
   .footer-logo a {
     width: 270px;
     height: 270px;
   }
+
   .footer-top-block {
     gap: 50px;
   }
+
   .footer-widget {
     width: 230px;
   }
+
   .footer-inner-wrap .container {
     max-width: 90%;
   }
+
   .footer-inner-wrap .container {
     max-width: 90%;
   }
+
   .footer-menu-area {
     width: 100%;
   }
+
   .footer-widget {
     width: 50%;
   }
+
   .footer-logo a {
     width: 200px;
     height: 200px;
   }
+
   .footer-bottom-menu {
     justify-content: center;
     flex-wrap: wrap;
     gap: 5px 10px;
   }
+
   .footer-bottom-block.mt-110 {
     margin-top: 60px;
   }
+
   .footer-top-block {
     flex-direction: column;
   }
+
   .footer-menu-area {
     flex-direction: column;
     gap: 30px;
   }
+
   .footer-widget h4 {
     margin-bottom: 12px;
   }
@@ -158,22 +196,28 @@
   .hero-inner-block {
     flex-direction: column;
   }
+
   .hero-left-block {
     position: unset;
   }
+
   .announcement-text p {
     font-size: 16px;
     padding-block: 4px;
   }
+
   .product-btn {
     margin-top: 40px;
   }
+
   .product-btn {
     margin-top: 40px;
   }
+
   .video-card {
     height: 440px;
   }
+
   .swiper.gallery-thumbs {
     max-width: 411px;
   }
@@ -185,157 +229,201 @@
   .swiper.gallery-thumbs {
     max-width: 297px;
   }
+
   .gallery-button-next {
     position: absolute;
   }
+
   .gallery-thumbs .gallery-button-prev,
   .gallery-thumbs .gallery-button-next {
     position: absolute;
     color: #46163c !important;
   }
+
   .story-title {
     text-align: left;
   }
+
   .story-title h2 {
     font-size: 30px;
   }
+
   .story-top-block {
     margin-bottom: 0;
   }
+
   .personalize-btn {
     padding: 13px 10px;
     font-size: 14px;
   }
+
   .product-card-content h4 {
     font-size: 22px;
   }
+
   .story-card-wrapper .row {
     --bs-gutter-x: 15px;
     --bs-gutter-y: 30px;
   }
+
   .product-card-thumb {
     height: auto;
     margin-top: 10px;
   }
+
   .product-card-btn {
     padding: 5px 0;
   }
+
   .product-price {
     font-size: 16px;
     margin-bottom: 10px;
   }
+
   .footer-bottom-block {
     flex-direction: column;
     gap: 30px;
   }
+
   .gallery-thumbs .gallery-button-prev {
     right: 0;
   }
+
   .gallery-thumbs .gallery-button-next {
     left: 0;
   }
+
   .personalized__content {
     margin: 0 auto;
     text-align: center;
   }
+
   .feedback-step h4 {
     font-size: 18px;
   }
+
   .story-filter-top {
     flex-direction: column;
     gap: 12px;
     align-items: flex-start !important;
   }
+
   .feedback-step {
     gap: 18px;
     padding-block: 12px;
   }
+
   .newsletter-content h3 {
     font-size: 30px;
   }
+
   .newsletter-right {
     flex-direction: column;
     gap: 30px;
   }
+
   circle {
     stroke-width: 7;
   }
+
   .card-message-left span {
     width: 50px;
     height: auto;
     flex: 0 0 auto;
   }
+
   .cart-msg-btn a br {
     display: none;
   }
+
   .cart-msg-btn a {
     font-size: 12px;
     width: 130px;
     height: 45px;
   }
+
   .gallery-title h2 {
     font-size: 30px;
   }
+
   .priciple-title h2 {
     font-size: 30px;
     line-height: 37px;
   }
+
   .faq-title {
     margin-bottom: 15px;
   }
+
   .comparison-table tbody tr td {
     font-size: 16px;
   }
+
   .testimoial-item h4 {
     font-size: 16px;
   }
+
   .testimonial-review-stars img {
     height: 18px;
   }
+
   .testimonial-review p {
     font-size: 20px;
   }
+
   .testimonial-title h2 {
     font-size: 30px;
   }
+
   .testimonial-title {
     margin-bottom: 10px;
   }
+
   .customres-thumb {
     height: 386px;
   }
+
   .payment-btns button {
     font-size: 16px;
   }
+
   .customers-top-block .section-title h2 {
     font-size: 30px;
   }
+
   .newsletter-area {
     overflow: hidden;
   }
+
   .personalized-area {
     overflow: hidden;
   }
+
   .buy-box {
     padding: 6px;
   }
+
   .hero-right-block {
     padding: 12px;
   }
+
   .story-length-option {
     border: 2.5px solid #ecdcea;
     font-size: 15px;
     padding: 9.5px 16px;
   }
+
   .product-customization-title h3 {
     font-size: 16px;
     line-height: 24px;
   }
+
   .section-title h2 {
     font-size: 26px;
     line-height: 36px;
     text-align: center;
   }
+
   .offcanvas__menu ul li {
     padding: 0 22px;
   }
@@ -349,28 +437,59 @@
     height: 180px;
     margin: 0 auto;
   }
+
   .product-info h4 {
     font-size: 14px;
     margin-bottom: 3px;
   }
+
   .comparison-table tbody tr td {
     font-size: 15px;
   }
+
   .quick-btn {
     padding: 8px 16px;
     font-size: 12px;
   }
+
   .custom-btn {
     padding: 12px 20px;
   }
+
   .footer-menu-area {
     text-align: center;
   }
+
   .footer-widget {
     width: 100%;
   }
+
   .footer-dropup-block p {
     font-size: 13px;
     text-align: center;
+  }
+
+  .story-filter-select p {
+    font-size: 12px;
+  }
+
+  .filter-sidebar {
+    max-width: 320px;
+  }
+
+  .close-btn {
+    font-size: 26px;
+    width: 18px;
+    height: 18px;
+    right: 20px;
+  }
+
+  .filter-body {
+    padding: 15px;
+    padding-top: 25px;
+  }
+
+  .filter-footer {
+    padding: 10px;
   }
 }

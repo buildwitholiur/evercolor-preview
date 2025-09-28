@@ -66,6 +66,73 @@
       </div>
     </div>
 
+    <!-- Sidebar -->
+    <div class="filter-sidebar" id="filterSidebar">
+      <div class="filter-header d-flex justify-content-center position-relative">
+        <div class="filter-header-content text-center">
+          <h4>Filter </h4>
+          <p class="m-0">24 products </p>
+        </div>
+        <button type="button" id="closeFilter" class="close-btn d-flex align-items-center justify-content-center position-absolute bg-transparent border-0"><i class="fal fa-times"></i></button>
+      </div>
+
+      <div class="filter-body">
+        <a href="#" class="availability-btn d-flex align-items-center justify-content-between w-100">Availability <span><i class="fal fa-long-arrow-right"></i></span></a>
+      </div>
+
+      <div class="filter-footer d-flex justify-content-between align-items-center">
+        <div class="category-remove-btn sidebar-remove-btn">
+          <button type="button" class="bg-transparent">Remove all</button>
+        </div>
+        <div class="product-btn filter-apply-btn m-0">
+          <button type="button">Apply</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <!-- <div class="filter-sidebar" id="filterSidebar">
+      <div class="filter-header d-flex justify-content-center position-relative">
+        <div class="filter-header-content text-center">
+          <h4>Filter </h4>
+          <p class="m-0">24 products </p>
+        </div>
+        <button type="button" id="closeFilter" class="close-btn d-flex align-items-center justify-content-center position-absolute bg-transparent border-0"><i class="fal fa-times"></i></button>
+      </div>
+
+      <div class="filter-body">
+        <a href="#" class="availability-btn d-flex align-items-center w-100"><span><i class="fal fa-long-arrow-left"></i></span> Availability</a>
+        <div class="filter-product-items mt-20">
+          <div class="checkbox-dd filter-checkbox">
+              <label class="container-dd">
+                  <span class="check_text">In stock (24)</span>
+                  <input type="checkbox" chedded="chedded">
+                  <span class="checkmark"></span>
+              </label>
+          </div>
+          <div class="checkbox-dd filter-checkbox" style="pointer-events:none; opacity:0.6;">
+            <label class="container-dd">
+              <span class="check_text">Out of stock (0)</span>
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-footer d-flex justify-content-between align-items-center">
+        <div class="category-remove-btn sidebar-remove-btn">
+          <button type="button" class="bg-transparent">Clear</button>
+        </div>
+        <div class="product-btn filter-apply-btn m-0">
+          <button type="button">Apply</button>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Overlay -->
+    <div class="filter-overlay" id="filterOverlay"></div>
+
     <!-- -------------------------- HEADER AREA START -------------------------- -->
     <div class="header-top-area">
       <div class="container-fluid p-0">
@@ -240,8 +307,11 @@
             <div class="story-bottom-block">
               <div class="story-filter-block">
                 <div class="story-filter-top d-flex align-items-center justify-content-between">
+                  <!-- Filter Button -->
                   <div class="filter-btn">
-                    <button type="button" class="d-flex align-items-center bg-transparent"><span><img src="assets/img/filter-icon.svg" alt="Icon"></span> Filter</button>
+                    <button type="button" id="openFilter" class="d-flex align-items-center bg-transparent">
+                      <span><img src="assets/img/filter-icon.svg" alt="Icon"></span> Filter
+                    </button>
                   </div>
                   <div class="story-filter-right d-flex align-items-center">
                     <div class="story-filter-select d-flex align-items-center">
@@ -905,6 +975,27 @@
   <script src="assets/js/jquery.nice-select.min.js"></script>
   <script src="assets/js/aos.js"></script>
   <script src="assets/js/main.js"></script>
+
+
+  <script>
+    class FilterSidebar {
+      constructor(openBtn, closeBtn, sidebar, overlay) {
+        this.sidebar = document.getElementById(sidebar);
+        this.overlay = document.getElementById(overlay);
+        document.getElementById(openBtn).onclick = () => this.toggle(true);
+        document.getElementById(closeBtn).onclick = () => this.toggle(false);
+        this.overlay.onclick = () => this.toggle(false);
+      }
+      toggle(show) {
+        this.sidebar.classList.toggle("active", show);
+        this.overlay.classList.toggle("active", show);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      new FilterSidebar("openFilter", "closeFilter", "filterSidebar", "filterOverlay");
+    });
+  </script>
 
 </body>
 
