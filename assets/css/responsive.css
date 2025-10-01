@@ -2,7 +2,11 @@
 
 @media screen and (max-width: 1620px) {}
 
-@media screen and (max-width: 1449px) {}
+@media screen and (max-width: 1449px) {
+  .hero-left-block {
+    max-width: 600px;
+  }
+}
 
 /* LG Device :992px. */
 
@@ -12,10 +16,11 @@
   }
 
   .header-logo a {
-    width: 60px;
-    height: 60px;
+    height: 50px;
   }
-
+.header-logo a img {
+	height: 50px;
+}
   .sale-text {
     font-size: 16px;
   }
@@ -132,11 +137,6 @@
     padding-block: 8px;
   }
 
-  .footer-logo a {
-    width: 270px;
-    height: 270px;
-  }
-
   .footer-top-block {
     gap: 50px;
   }
@@ -161,15 +161,10 @@
     width: 50%;
   }
 
-  .footer-logo a {
-    width: 200px;
-    height: 200px;
-  }
-
   .footer-bottom-menu {
     justify-content: center;
     flex-wrap: wrap;
-    gap: 5px 10px;
+    gap: 8px 10px;
   }
 
   .footer-bottom-block.mt-110 {
@@ -187,6 +182,10 @@
 
   .footer-widget h4 {
     margin-bottom: 12px;
+  }
+
+  .quickview-sidebar {
+    max-width: 476px;
   }
 }
 
@@ -220,6 +219,50 @@
 
   .swiper.gallery-thumbs {
     max-width: 411px;
+  }
+
+  .quick-sidebar-header {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .quick-sidebar-title h4 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    letter-spacing: 2%;
+  }
+
+  .quick-sidebar-title p {
+    font-size: 15px;
+    letter-spacing: 2%;
+  }
+
+  .quick-sidebar-header .close-btn {
+    position: unset;
+  }
+
+  .quickview-footer {
+    padding: 15px;
+  }
+
+  .quickview-footer .option-group {
+    margin-bottom: 20px;
+  }
+
+  .quickview-footer .option-header {
+    margin-bottom: 12px;
+  }
+
+  .quickview-footer .radio-btn span {
+    padding: 10px 14px;
+  }
+
+  .quickview-footer .add-cart-btn {
+    padding: 16px;
+    font-size: 12px;
+    letter-spacing: 1%;
   }
 }
 
@@ -433,8 +476,6 @@
 
 @media screen and (max-width: 575px) {
   .footer-logo a {
-    width: 180px;
-    height: 180px;
     margin: 0 auto;
   }
 
@@ -469,27 +510,7 @@
     text-align: center;
   }
 
-  .story-filter-select p {
-    font-size: 12px;
-  }
-
-  .filter-sidebar {
-    max-width: 320px;
-  }
-
-  .close-btn {
-    font-size: 26px;
-    width: 18px;
-    height: 18px;
-    right: 20px;
-  }
-
-  .filter-body {
-    padding: 15px;
-    padding-top: 25px;
-  }
-
-  .filter-footer {
-    padding: 10px;
+  .quickview-sidebar {
+    max-width: 375px;
   }
 }

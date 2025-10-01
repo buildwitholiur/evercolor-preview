@@ -19,8 +19,6 @@
             $(".file-name").text(fileName);
         }
 
-
-
         // Progress circle animation
         const radius = 35;
         const circumference = 2 * Math.PI * radius;
@@ -133,6 +131,8 @@
             );
         }
 
+
+
         // update every second
         updateCountdown();
         const timer = setInterval(updateCountdown, 1000);
@@ -174,6 +174,72 @@
                 storyText.innerHTML = `Story Length <span>|</span> ${input.value}`;
             });
         });
+
+
+        // 
+        document.addEventListener("DOMContentLoaded", () => {
+            const loadMoreBtn = document.querySelector(".about-btn.product-btn button");
+            const loadMoreCard = document.querySelector(".load-more-card");
+
+            loadMoreCard.classList.add("d-none");
+            loadMoreBtn.textContent = "Load More";
+
+            loadMoreBtn.addEventListener("click", () => {
+                loadMoreCard.classList.remove("d-none");
+                loadMoreBtn.style.display = "none";
+            });
+        });
+
+
+
+        // sidebar open
+        document.querySelectorAll(".quick-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                document.querySelector(".quickview-sidebar").classList.add("active");
+                document.querySelector(".quickview-overlay").classList.add("active");
+                document.body.classList.add("overflow-hidden"); // body scroll block
+            });
+        });
+
+        // sidebar close button
+        document.querySelector(".close-btn").addEventListener("click", () => {
+            document.querySelector(".quickview-sidebar").classList.remove("active");
+            document.querySelector(".quickview-overlay").classList.remove("active");
+            document.body.classList.remove("overflow-hidden"); // body scroll enable
+        });
+
+        // overlay click close
+        document.querySelector(".quickview-overlay").addEventListener("click", () => {
+            document.querySelector(".quickview-sidebar").classList.remove("active");
+            document.querySelector(".quickview-overlay").classList.remove("active");
+            document.body.classList.remove("overflow-hidden"); // body scroll enable
+        });
+
+
+
+
+        // 
+        window.addEventListener("load", () => {
+            // reset default state every refresh
+            document.querySelector('.quickview-footer input[name="format"][value="PRINT AT HOME"]').checked = true;
+            document.querySelector('.selected-format').textContent = "PRINT AT HOME";
+
+            document.querySelector('.quickview-footer input[name="length"][value="ESSENTIAL EDITION"]').checked = true;
+            document.querySelector('.selected-length').textContent = "ESSENTIAL EDITION";
+        });
+
+        // generic handler for both groups
+        document.querySelectorAll('.quickview-footer input[type="radio"]').forEach(radio => {
+            radio.addEventListener("change", e => {
+                if (e.target.name === "format") {
+                    document.querySelector(".selected-format").textContent = e.target.value;
+                }
+                if (e.target.name === "length") {
+                    document.querySelector(".selected-length").textContent = e.target.value;
+                }
+            });
+        });
+
 
 
         // video slider
@@ -337,20 +403,7 @@
             selector: '.venobox'
         });
 
-        // Announcement marquee swiper
-        const marqueeSwiper = new Swiper(".announcementSwiper", {
-            slidesPerView: "auto", // each item tar width onujayi
-            spaceBetween: 70, // 70px gap
-            loop: true,
-            allowTouchMove: false, // swipe off
-            freeMode: true, // continuous scroll effect
-            freeModeMomentum: false, // ekdom smooth without snap
-            speed: 6000, // jotota barale toto smoothly cholbe
-            autoplay: {
-                delay: 0, // no delay
-                disableOnInteraction: false,
-            },
-        });
+
 
 
         // Product announcement marquee swiper
